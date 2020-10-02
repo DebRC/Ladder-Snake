@@ -19,23 +19,23 @@ screen=pygame.display.set_mode((WIDTH,HEIGHT))
 
 #caption and icon
 pygame.display.set_caption("Ladder & Snake")
-icon=pygame.image.load("icon.png")
+icon=pygame.image.load("Images\\icon.png")
 pygame.display.set_icon(icon)
 
-red=pygame.image.load("red.png")
-blue=pygame.image.load("blue.png")
-yellow=pygame.image.load("yellow.png")
-green=pygame.image.load("green.png")
-blue_yellow=pygame.image.load("blue-yellow.png")
-red_green=pygame.image.load("red-green.png")
-red_blue=pygame.image.load("red-blue.png")
-green_blue=pygame.image.load("green-blue.png")
-yellow_red=pygame.image.load("yellow-red.png")
+red=pygame.image.load("Images\\red.png")
+blue=pygame.image.load("Images\\blue.png")
+yellow=pygame.image.load("Images\\yellow.png")
+green=pygame.image.load("Images\\green.png")
+blue_yellow=pygame.image.load("Images\\blue-yellow.png")
+red_green=pygame.image.load("Images\\red-green.png")
+red_blue=pygame.image.load("Images\\red-blue.png")
+green_blue=pygame.image.load("Images\\green-blue.png")
+yellow_red=pygame.image.load("Images\\yellow-red.png")
 
-mixer.music.load("start_music.ogg")
+mixer.music.load("Sounds\\start_music.ogg")
 mixer.music.play(-1)
 
-background = pygame.image.load("game_mode.jpg")
+background = pygame.image.load("Images\\game_mode.jpg")
 screen.blit(background,(0,0))
 player_number=0
 game_mode=True
@@ -46,19 +46,19 @@ while game_mode:
 		if event.type==pygame.MOUSEBUTTONDOWN:
 			click=pygame.mouse.get_pos()
 			if (click[0]>=158 and click[0]<=302 and click[1]>=221 and click[1]<=291):
-				button_sound=mixer.Sound("button.wav")
+				button_sound=mixer.Sound("Sounds\\button.wav")
 				button_sound.play()
 				player_number=1
 				game_mode=False
 			elif (click[0]>=394 and click[0]<=532 and click[1]>=221 and click[1]<=291):
-				button_sound=mixer.Sound("button.wav")
+				button_sound=mixer.Sound("Sounds\\button.wav")
 				button_sound.play()
 				player_number=2
 				game_mode=False
 	pygame.display.update()
 
 if(player_number==1):
-	background = pygame.image.load("color_choice.jpg")
+	background = pygame.image.load("Images\\color_choice.jpg")
 	screen.blit(background,(0,0))
 	color_choice=True
 	while color_choice:
@@ -68,7 +68,7 @@ if(player_number==1):
 			if event.type==pygame.MOUSEBUTTONDOWN:
 				click=pygame.mouse.get_pos()
 				if (click[0]>=168 and click[0]<=229 and click[1]>=249 and click[1]<=310):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=red
 					comp_choice=blue
@@ -76,7 +76,7 @@ if(player_number==1):
 					mixer.music.stop()
 					color_choice=False
 				elif (click[0]>=277 and click[0]<=339 and click[1]>=249 and click[1]<=312):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=blue
 					comp_choice=yellow
@@ -84,7 +84,7 @@ if(player_number==1):
 					mixer.music.stop()
 					color_choice=False
 				elif (click[0]>=385 and click[0]<=445 and click[1]>=246 and click[1]<=307):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=yellow
 					comp_choice=red
@@ -92,7 +92,7 @@ if(player_number==1):
 					mixer.music.stop()
 					color_choice=False
 				elif (click[0]>=490 and click[0]<=552 and click[1]>=247 and click[1]<=309):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=green
 					comp_choice=red
@@ -102,7 +102,7 @@ if(player_number==1):
 		pygame.display.update()
 
 	#background image
-	background = pygame.image.load("background.jpg")
+	background = pygame.image.load("Images\\background.jpg")
 	screen.blit(background,(0,0))
 
 	#player
@@ -124,18 +124,18 @@ if(player_number==1):
 	guti_y=[506,451,396,341,286,231,176,121,66,11]
 
 	#dice
-	one=pygame.image.load("one.png")
-	two=pygame.image.load("two.png")
-	three=pygame.image.load("three.png")
-	four=pygame.image.load("four.png")
-	five=pygame.image.load("five.png")
-	six=pygame.image.load("six.png")
+	one=pygame.image.load("Images\\one.png")
+	two=pygame.image.load("Images\\two.png")
+	three=pygame.image.load("Images\\three.png")
+	four=pygame.image.load("Images\\four.png")
+	five=pygame.image.load("Images\\five.png")
+	six=pygame.image.load("Images\\six.png")
 	screen.blit(one,(621,581))
 
 	#font
-	font1=pygame.font.Font("font1.ttf",50, bold=True, italic=False)
-	font2=pygame.font.Font("font2.otf",23, bold=True, italic=False)
-	font3=pygame.font.Font("font3.ttf",25, bold=True, italic=True)
+	font1=pygame.font.Font("Fonts\\font1.ttf",50, bold=True, italic=False)
+	font2=pygame.font.Font("Fonts\\font2.otf",23, bold=True, italic=False)
+	font3=pygame.font.Font("Fonts\\font3.ttf",25, bold=True, italic=True)
 	player_label=font3.render("Your Score:- "+str(player1_score), 1, (153, 204, 255))
 	screen.blit(player_label,(60,565))
 	comp_label=font3.render("Computer's Score:- "+str(comp_score), 1, (153, 204, 255))
@@ -144,9 +144,9 @@ if(player_number==1):
 	screen.blit(label,(415,610))
 
 	#sound effects
-	dice_sound=mixer.Sound("dice_sound.wav")
-	snake_sound=mixer.Sound("snake.ogg")
-	ladder_sound=mixer.Sound("ladder.wav")
+	dice_sound=mixer.Sound("Sounds\\dice_sound.wav")
+	snake_sound=mixer.Sound("Sounds\\snake.ogg")
+	ladder_sound=mixer.Sound("Sounds\\ladder.wav")
 
 	#basics
 	turn=0
@@ -614,12 +614,12 @@ if(player_number==1):
 			screen.blit(label,(415,610))
 			turn+=1
 			if(comp_score==100 or player1_score==100):
-				over=mixer.Sound("gameover.wav")
+				over=mixer.Sound("Sounds\\gameover.wav")
 				over.play()
 				break
 			pygame.display.update()
 	while(1):
-		background = pygame.image.load("starter.jpg")
+		background = pygame.image.load("Images\\starter.jpg")
 		screen.blit(background,(0,0))
 		for event in pygame.event.get():
 			if event.type==pygame.QUIT:
@@ -635,7 +635,7 @@ if(player_number==1):
 			screen.blit(label,(60,274))
 		pygame.display.update()
 elif(player_number==2):
-	background = pygame.image.load("color_choice_player1.jpg")
+	background = pygame.image.load("Images\\color_choice_player1.jpg")
 	screen.blit(background,(0,0))
 	color_choice_player1=True
 
@@ -646,28 +646,28 @@ elif(player_number==2):
 			if event.type==pygame.MOUSEBUTTONDOWN:
 				click=pygame.mouse.get_pos()
 				if (click[0]>=168 and click[0]<=229 and click[1]>=249 and click[1]<=310):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=red
 					color_choice_player1=False
 				elif (click[0]>=277 and click[0]<=339 and click[1]>=249 and click[1]<=312):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=blue
 					color_choice_player1=False
 				elif (click[0]>=385 and click[0]<=445 and click[1]>=246 and click[1]<=307):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=yellow
 					color_choice_player1=False
 				elif (click[0]>=490 and click[0]<=552 and click[1]>=247 and click[1]<=309):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player1_choice=green
 					color_choice_player1=False
 		pygame.display.update()
 
-	background = pygame.image.load("color_choice_player2.jpg")
+	background = pygame.image.load("Images\\color_choice_player2.jpg")
 	screen.blit(background,(0,0))
 	color_choice_player2=True
 
@@ -678,25 +678,25 @@ elif(player_number==2):
 			if event.type==pygame.MOUSEBUTTONDOWN:
 				click=pygame.mouse.get_pos()
 				if (click[0]>=168 and click[0]<=229 and click[1]>=249 and click[1]<=310):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player2_choice=red
 					mixer.music.stop()
 					color_choice_player2=False
 				elif (click[0]>=277 and click[0]<=339 and click[1]>=249 and click[1]<=312):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player2_choice=blue
 					mixer.music.stop()
 					color_choice_player2=False
 				elif (click[0]>=385 and click[0]<=445 and click[1]>=246 and click[1]<=307):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player2_choice=yellow
 					mixer.music.stop()
 					color_choice_player2=False
 				elif (click[0]>=490 and click[0]<=552 and click[1]>=247 and click[1]<=309):
-					button_sound=mixer.Sound("button.wav")
+					button_sound=mixer.Sound("Sounds\\button.wav")
 					button_sound.play()
 					player2_choice=green
 					mixer.music.stop()
@@ -704,7 +704,7 @@ elif(player_number==2):
 		pygame.display.update()
 
 	#background image
-	background = pygame.image.load("background.jpg")
+	background = pygame.image.load("Images\\background.jpg")
 	screen.blit(background,(0,0))
 
 	#player
@@ -747,18 +747,18 @@ elif(player_number==2):
 	guti_y=[506,451,396,341,286,231,176,121,66,11]
 
 	#dice
-	one=pygame.image.load("one.png")
-	two=pygame.image.load("two.png")
-	three=pygame.image.load("three.png")
-	four=pygame.image.load("four.png")
-	five=pygame.image.load("five.png")
-	six=pygame.image.load("six.png")
+	one=pygame.image.load("Images\\one.png")
+	two=pygame.image.load("Images\\two.png")
+	three=pygame.image.load("Images\\three.png")
+	four=pygame.image.load("Images\\four.png")
+	five=pygame.image.load("Images\\five.png")
+	six=pygame.image.load("Images\\six.png")
 	screen.blit(one,(621,581))
 
 	#font
-	font1=pygame.font.Font("font1.ttf",50, bold=True, italic=False)
-	font2=pygame.font.Font("font2.otf",23, bold=True, italic=False)
-	font3=pygame.font.Font("font3.ttf",25, bold=True, italic=True)
+	font1=pygame.font.Font("Fonts\\font1.ttf",50, bold=True, italic=False)
+	font2=pygame.font.Font("Fonts\\font2.otf",23, bold=True, italic=False)
+	font3=pygame.font.Font("Fonts\\font3.ttf",25, bold=True, italic=True)
 	player_label=font3.render("Player 1's Score:- "+str(player1_score), 1, (153, 204, 255))
 	screen.blit(player_label,(60,565))
 	player2_label=font3.render("Player 2's Score:- "+str(player2_score), 1, (153, 204, 255))
@@ -767,9 +767,9 @@ elif(player_number==2):
 	screen.blit(label,(415,610))
 
 	#sound effects
-	dice_sound=mixer.Sound("dice_sound.wav")
-	snake_sound=mixer.Sound("snake.ogg")
-	ladder_sound=mixer.Sound("ladder.wav")
+	dice_sound=mixer.Sound("Sounds\\dice_sound.wav")
+	snake_sound=mixer.Sound("Sounds\\snake.ogg")
+	ladder_sound=mixer.Sound("Sounds\\ladder.wav")
 
 	#basics
 	turn=0
@@ -1244,12 +1244,12 @@ elif(player_number==2):
 						label=font3.render("Player 2's Turn", 1, (255, 204, 0))
 						screen.blit(label,(360,610))
 						if(player2_score==100 or player1_score==100):
-							over=mixer.Sound("gameover.wav")
+							over=mixer.Sound("Sounds\\gameover.wav")
 							over.play()
 							break
 			pygame.display.update()
 	while(1):
-		background = pygame.image.load("starter.jpg")
+		background = pygame.image.load("Images\\starter.jpg")
 		screen.blit(background,(0,0))
 		for event in pygame.event.get():
 			if event.type==pygame.QUIT:
